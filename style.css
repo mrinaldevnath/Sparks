@@ -648,7 +648,7 @@ canvas.particles-js-canvas-el
 	}
 	.logo
 	{
-		font-size: 1.3rem;
+		font-size: 1.4rem;
 	}
 	.menu
 	{
@@ -688,15 +688,15 @@ canvas.particles-js-canvas-el
 	}
 	.preText
 	{
-		font-size: 0.8rem;
+		font-size: 4vw;
 	}
 	.mainText
 	{
-		font-size: 4.3rem;
+		font-size: 20vw;
 	}
 	.postText
 	{
-		font-size: 1.1rem;
+		font-size: 5vw;
 	}
 	.static
 	{
