@@ -26,6 +26,9 @@ body
 	background: -webkit-linear-gradient(90deg, hsla(350, 73%, 44%, 1) 0%, hsla(274, 65%, 12%, 1) 100%);
 	overflow-x: hidden;
 }
+
+/* Preloader */
+
 #loaderSvgWrapper{
 	position: fixed;
 	width: 100%;
@@ -106,17 +109,23 @@ path{
 	width: 100vw;
 	height: 100vh;
 }
+
+/* Navigation Bar */
+
 header
 {
 	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100%;
-	padding: 10px 60px;
+	padding: 10px 40px;
 	padding-top: 15px;
 	display: flex;
 	justify-content: space-between;
 	z-index: 5;
+	background-color: rgba(16, 3, 41, 0.8);
+	backdrop-filter: blur(20px);
+	box-shadow: 0 5px 20px 5px rgba(16, 3, 41, 0.479);
 }
 .logo
 {
@@ -129,7 +138,6 @@ header
 .menu
 {
   	width:40px;
-	margin: 10px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -163,6 +171,25 @@ header
 	transform: translateY(10px);
 	transition: all 0.3s;
 }
+.menu.active .bar
+{
+	transform: rotate(360deg);
+	background-color: transparent;
+}
+.menu.active .bar:before
+{
+	transform: translateY(0) rotate(135deg);
+	transition: all 0.3s;
+}
+.menu.active .bar:after 
+{
+	transform: translateY(0) rotate(45deg);
+	transition: all 0.3s;
+
+}
+
+/* Wrapper - Visible Part of the Webpage */
+
 .wrapper
 {
 	position: relative;
@@ -180,12 +207,32 @@ header
 	transform-style: preserve-3d;
 	z-index: 1;
 }
+.wrapper.active
+{
+	animation: wrapper-animation 0.5s ease;
+	cursor: pointer;
+	transform: perspective(1300px) rotateY(20deg) translateZ(310px) scale(0.5);
+}
+@keyframes wrapper-animation
+{
+	from
+	{
+		transform: translate(0);
+	}
+	to
+	{
+		transform: perspective(1300px) rotateY(20deg) translateZ(310px) scale(0.5);
+	}
+}
 .crop
 {
 	height: 100%;
 	max-height: 100vh;
 	overflow:hidden;
 }
+
+/* Wrapper Ends Here */
+
 main
 {
 	display: flex;
@@ -197,14 +244,14 @@ main
 }
 .preText
 {
-	font: 1.8vw "Corbel";
+	font: max(1.4rem, 1.8vw) "Corbel";
 	text-transform: uppercase;
 	text-shadow: -3px -3px 5px white;
 	text-align: center;
 }
 .mainText
 {
-	font: 11.5vw "Vivaldi";
+	font: max(8.8rem, 11.5vw) "Vivaldi";
 	text-shadow: -5px -5px 15px white;
 	text-align: center;
 	padding: 20px 0;
@@ -216,7 +263,7 @@ main
 }
 .postText
 {
-	font: 2.2vw "Garamond";
+	font: max(1.6rem, 2.2vw) "Garamond";
 	text-align: center;
 }
 .static
@@ -230,13 +277,12 @@ main
 }
 .animation img
 {
-	width: 20vw;
-	height: 20vw;
+	width: max(260px, 20vw);
+	height: max(260px, 20vw);
 }
 .btns
 {
 	display: flex;
-	width: 100%;
 	justify-content: center;
 	margin-top: 60px;
 	margin-bottom: 100px; 
@@ -244,11 +290,12 @@ main
 .btns a
 {
 	position: relative;
-	padding: 8px 60px;
+	padding: 10px 80px;
 	margin: 0 10px;
 	display: block;
-	font: 1.8vw "Corbel";
+	font: max(1.4rem, 1.8vw) "Corbel";
 	text-transform: uppercase;
+	text-align: center;
 	border-top: 2px solid rgba(255, 255, 255, 0.6);
 	border-left: 3px solid rgba(255, 255, 255, 0.6);
 	border-radius: 7.5px;
@@ -261,37 +308,39 @@ main
 {
 	transform: translateY(-5px);
 }
+
+/* Scroll to Top Button and Animation */
+
 .scrollTop
 {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	position: fixed;
-	width: 45px;
-	height: 45px;
-	border-radius: 5px;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
 	background: rgba(255,255,255,0.5);
-	padding-top: 12px;
-	transform: rotateZ(-30deg);
-	transform-origin: left bottom;
+	padding-top: 9px;
 	bottom: 20px;
-	right: 60px;
-	transition: transform 0.25s;
+	right: 65px;
 }
 .arrow
 {
 	position: relative;
-	width: 25px;
-	height: 25px;
-	border-left: 7px solid black;
-	border-bottom: 7px solid black;
+	width: 22px;
+	height: 22px;
+	border-left: 5px solid black;
+	border-bottom: 5px solid black;
 	transform: rotateZ(135deg);
 }
 .scrollTop:hover
 {
 	background: rgba(255,255,255, 1);
-	transform: rotateZ(0);
 }
+
+/* Show Footer Button and Animation */
+
 .showFooter
 {
 	position: relative;
@@ -365,7 +414,10 @@ main
 		opacity: 0;
 		transform: translateY(5px) scale3d(0.5, 0.5, 0.5);
 	}
-}  
+}
+
+/* Footer */
+
 footer
 {
 	position: relative;
@@ -383,7 +435,7 @@ footer
 .media
 {
 	display: flex;
-	font: 1.6vw "Corbel";
+	font: max(1.2rem, 1.6vw) "Corbel";
 	text-transform: uppercase;
 }
 .media img
@@ -401,14 +453,17 @@ footer
 }
 .credit
 {
-	font: 1.6vw "Corbel";
+	font: max(1.2rem, 1.6vw) "Corbel";
 	text-transform: uppercase;
 }
 .credit span
 {
-	font: 2.3vw "Vivaldi";
+	font: max(1.8rem, 2.3vw) "Vivaldi";
 	text-transform: none;
 }
+
+/* Use of particles.js */
+
 #particles-js
 {
 	height: 100%;
@@ -423,12 +478,16 @@ canvas.particles-js-canvas-el
 	z-index: -1;
 }
 
+/* Navigation Buttons */
+
 .container nav
 {
 	position: absolute;
-	top: 110px;
 	right: 40px;
 	width: 200px;
+	height: 100%;
+	display: flex;
+	align-items: center;
 }
 .container nav ul
 {
@@ -447,6 +506,11 @@ canvas.particles-js-canvas-el
 	transition: all var(--time) var(--i);
 	transition: font-size 0.2s;
 }
+.container.active nav ul li a
+{
+	opacity: 1;
+	transform: translateY(0);
+}
 .container nav ul li a:hover
 {
 	font-size: 25px;
@@ -459,42 +523,240 @@ canvas.particles-js-canvas-el
 {
 	color: yellow;
 }
-.menu.active .bar
-{
-	transform: rotate(360deg);
-	background-color: transparent;
-}
-.menu.active .bar:before
-{
-	transform: translateY(0) rotate(135deg);
-	transition: all 0.3s;
-}
-.menu.active .bar:after 
-{
-	transform: translateY(0) rotate(45deg);
-	transition: all 0.3s;
 
-}
-.wrapper.active
+/* Media Queries */
+
+@media only screen and (max-width: 1060px)
 {
-	animation: wrapper-animation 0.5s ease;
-	cursor: pointer;
-	transform: perspective(1300px) rotateY(20deg) translateZ(310px) scale(0.5);
-}
-@keyframes wrapper-animation
-{
-	from
+	main
 	{
-		transform: translate(0);
+		flex-direction: column;
 	}
-	to
+	.wrapper.active
 	{
-		transform: perspective(1300px) rotateY(20deg) translateZ(310px) scale(0.5);
+		transform: perspective(1300px) rotateY(20deg) translateZ(310px) translateX(-50px) scale(0.5);
 	}
-}
-.container.active nav ul li a
-{
-	opacity: 1;
-	transform: translateY(0);
+	@keyframes wrapper-animation
+	{
+		from
+		{
+			transform: translate(0);
+		}
+		to
+		{
+			transform: perspective(1300px) rotateY(20deg) translateZ(310px) translateX(-50px) scale(0.5);
+		}
+	}
+	.preText
+	{
+		font-size: max(1.15rem, 2.5vw);
+	}
+	.mainText
+	{
+		font-size: max(6.5rem, 15.5vw)
+	}
+	.postText
+	{
+		font-size: max(1.45rem, 3vw);	
+	}
+	.animation img
+	{
+		width: 300px;
+		height: 300px;
+	}
+  .container nav
+	{
+		width: 180px;
+	}
 }
 
+@media only screen and (max-width: 800px)
+{
+	.wrapper.active
+	{
+		transform: perspective(1300px) rotateY(50deg) translateZ(0) scale(1);
+	}
+	@keyframes wrapper-animation
+	{
+		from
+		{
+			transform: translate(0);
+		}
+		to
+		{
+		  transform: perspective(1300px) rotateY(50deg) translateZ(0) scale(1);
+		}
+	}
+	.logo
+	{
+		font-size: 1.8rem;
+	}
+	.menu
+	{
+		width: 35px;
+	}
+	.btns
+	{
+		flex-direction: column;
+		padding: 10px 80px;
+	}
+	.btns a
+	{
+		margin: 10px;
+		font-size: max(1.2rem, 3.5vw)
+	}
+}
+
+@media only screen and (max-width: 560px)
+{
+	.preText
+	{
+		font-size: 1rem;
+	}
+	.mainText
+	{
+		font-size: 4.95rem;
+	}
+	.postText
+	{
+		font-size: 1.2rem;
+	}
+	.animation img
+	{
+		width: 250px;
+		height: 250px;
+	}
+	.btns
+	{
+		padding: 8px 100px;
+	}
+	.btns a
+	{
+		font-size: 1rem;
+	}
+	.container nav
+	{
+		width: 150px;
+	}
+}
+
+@media only screen and (max-device-width: 450px)
+{
+	header
+	{
+		padding: 10px 15px;
+	}
+	.logo
+	{
+		font-size: 1.3rem;
+	}
+	.menu
+	{
+		width: 25px;
+	}
+	.menu .bar
+	{
+		height: 1.5px;
+	}
+	.menu .bar::before
+	{
+		transform: translateY(-7px);
+	}
+	.menu .bar::after
+	{
+		transform: translateY(7px);
+	}
+
+	.wrapper.active
+	{
+		transform: perspective(1300px) rotateY(65deg) translateZ(0) scale(1);
+	}
+	@keyframes wrapper-animation
+	{
+		from
+		{
+			transform: translate(0);
+		}
+		to
+		{
+		  transform: perspective(1300px) rotateY(65deg) translateZ(0) scale(1);
+		}
+	}
+	main
+	{
+		margin-top: 110px;
+	}
+	.preText
+	{
+		font-size: 0.8rem;
+	}
+	.mainText
+	{
+		font-size: 4.3rem;
+	}
+	.postText
+	{
+		font-size: 1.1rem;
+	}
+	.static
+	{
+		margin-bottom: 20px;
+	}
+	.animation
+	{
+		margin-top: 20px;
+	}
+	.animation img
+	{
+		width: 200px;
+		height: 200px;
+	}
+	.btns
+	{
+		margin-top: 0;
+		padding: 0 80px;
+	}
+  	.btns a
+	{
+		font-size: 0.9rem;
+	}
+	.scrollTop
+	{
+		right: 20px;
+		width: 30px;
+		height: 30px;
+		padding-top: 5px;
+		background: white;
+	}
+	.arrow
+	{
+		width: 13px;
+		height: 13px;
+	}
+	footer
+	{
+		padding: 40px;
+	}
+	.media
+	{
+		font-size: 0.9rem;
+	}
+	.media img
+	{
+		width: 52px;
+		height: 52px;
+	}
+	.media img:hover
+	{
+		width: 55px;
+		height: 55px;
+	}
+	.credit
+	{
+		font-size: 0.9rem;
+	}
+	.credit span
+	{
+		font-size: 1.3rem;
+	}
+}
