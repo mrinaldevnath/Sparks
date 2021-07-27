@@ -323,7 +323,7 @@ main
 	background: rgba(255,255,255,0.5);
 	padding-top: 9px;
 	bottom: 20px;
-	right: 65px;
+	right: 41px;
 }
 .arrow
 {
@@ -650,6 +650,17 @@ canvas.particles-js-canvas-el
 	{
 		font-size: 1rem;
 	}
+	.scrollTop
+	{
+		width: 40px;
+		height: 40px;
+		right: 17.5px;
+	}
+	.arrow
+	{
+		width: 18px;
+		height: 18px;
+	}
 	.container nav
 	{
 		width: 150px;
@@ -721,16 +732,16 @@ canvas.particles-js-canvas-el
 	}
 	.scrollTop
 	{
-		right: 20px;
-		width: 30px;
-		height: 30px;
+		right: 18px;
+		width: 33px;
+		height: 33px;
 		padding-top: 5px;
 		background: white;
 	}
 	.arrow
 	{
-		width: 13px;
-		height: 13px;
+		width: 15px;
+		height: 15px;
 	}
 	footer
 	{
