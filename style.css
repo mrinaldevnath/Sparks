@@ -587,14 +587,6 @@ canvas.particles-js-canvas-el
 		  transform: perspective(1300px) rotateY(50deg) translateZ(0) scale(1);
 		}
 	}
-	.logo
-	{
-		font-size: 1.8rem;
-	}
-	.menu
-	{
-		width: 35px;
-	}
 	.btns
 	{
 		flex-direction: column;
@@ -609,6 +601,30 @@ canvas.particles-js-canvas-el
 
 @media only screen and (max-width: 560px)
 {
+	header
+	{
+		padding: 10px 20px;
+	}
+	.logo
+	{
+		font-size: 1.5rem;
+	}
+	.menu
+	{
+		width: 25px;
+	}
+	.menu .bar
+	{
+		height: 1.5px;
+	}
+	.menu .bar::before
+	{
+		transform: translateY(-7px);
+	}
+	.menu .bar::after
+	{
+		transform: translateY(7px);
+	}
 	.preText
 	{
 		font-size: 1rem;
@@ -650,23 +666,6 @@ canvas.particles-js-canvas-el
 	{
 		font-size: 1.4rem;
 	}
-	.menu
-	{
-		width: 25px;
-	}
-	.menu .bar
-	{
-		height: 1.5px;
-	}
-	.menu .bar::before
-	{
-		transform: translateY(-7px);
-	}
-	.menu .bar::after
-	{
-		transform: translateY(7px);
-	}
-
 	.wrapper.active
 	{
 		transform: perspective(1300px) rotateY(65deg) translateZ(0) scale(1);
