@@ -263,7 +263,7 @@ main
 }
 .postText
 {
-	font: max(1.6rem, 2.2vw) "Garamond";
+	font: max(1.6rem, 2.2vw) "Corbel";
 	text-align: center;
 }
 .static
