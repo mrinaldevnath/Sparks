@@ -242,6 +242,7 @@ main
 	justify-content: center;
 	align-items: center;
 	margin-top: 100px;
+	transition: all 1s;
 }
 .wrapper.active main
 {
