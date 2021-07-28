@@ -243,6 +243,10 @@ main
 	align-items: center;
 	margin-top: 100px;
 }
+.wrapper.active main
+{
+	margin-top: 0;
+}
 .preText
 {
 	font: max(1.4rem, 1.8vw) "Corbel";
