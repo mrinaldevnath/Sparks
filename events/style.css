@@ -1,770 +1,729 @@
-@import url('https://fonts.cdnfonts.com/css/vivaldi');
-@import url('https://fonts.cdnfonts.com/css/corbel');
-@import url('https://fonts.cdnfonts.com/css/garamond');
-@import url('https://fonts.cdnfonts.com/css/broadway-bt');
-
+@import url(https://fonts.cdnfonts.com/css/vivaldi);
+@import url(https://fonts.cdnfonts.com/css/corbel);
+@import url(https://fonts.cdnfonts.com/css/garamond);
+@import url(https://fonts.cdnfonts.com/css/broadway-bt);
 :root
 {
-	--time: 0.3s;
+	--time:0.3s
 }
-*
-{
-	padding: 0;
-	margin: 0;
-	box-sizing: border-box;
-	color: white;
-	text-decoration: none;
+*{
+	padding:0;
+	margin:0;
+	box-sizing:border-box;
+	color:#fff;
+	text-decoration:none
 }
 html
 {
-	scroll-behavior: smooth;
+	scroll-behavior:smooth
 }
 body
 {
-	background: hsla(350, 73%, 44%, 1);
-	background: linear-gradient(90deg, hsla(350, 73%, 44%, 1) 0%, hsla(274, 65%, 12%, 1) 100%);
-	background: -moz-linear-gradient(90deg, hsla(350, 73%, 44%, 1) 0%, hsla(274, 65%, 12%, 1) 100%);
-	background: -webkit-linear-gradient(90deg, hsla(350, 73%, 44%, 1) 0%, hsla(274, 65%, 12%, 1) 100%);
-	overflow-x: hidden;
+	background:#c21e39;
+	background:linear-gradient(90deg,#c21e39 0,#210a32 100%);
+	background:-moz-linear-gradient(90deg,#c21e39 0,#210a32 100%);
+	background:-webkit-linear-gradient(90deg,#c21e39 0,#210a32 100%);
+	overflow-x:hidden
 }
-
-/* Preloader */
-
-#loaderSvgWrapper{
-	position: fixed;
-	width: 100%;
-	height: 100%;
-	background: hsla(330, 100%, 30%, 1);
-	background: linear-gradient(90deg, hsla(330, 100%, 30%, 1) 0%, hsla(251, 100%, 8%, 1) 100%);
-	background: -moz-linear-gradient(90deg, hsla(330, 100%, 30%, 1) 0%, hsla(251, 100%, 8%, 1) 100%);
-	background: -webkit-linear-gradient(90deg, hsla(330, 100%, 30%, 1) 0%, hsla(251, 100%, 8%, 1) 100%);
-	z-index: 10;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	transition: display 5s;
+#loaderSvgWrapper
+{
+	position:fixed;
+	width:100%;
+	height:100%;
+	background:#99004c;
+	background:linear-gradient(90deg,#99004c 0,#070028 100%);
+	background:-moz-linear-gradient(90deg,#99004c 0,#070028 100%);
+	background:-webkit-linear-gradient(90deg,#99004c 0,#070028 100%);
+	z-index:10;
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+	align-items:center;
+	transition:display 5s
 }
-#preLoader{
-	position: relative;
+#preLoader
+{
+	position:relative
 }
-path{
-	fill: white;
-	stroke: white;
+path
+{
+	fill:#fff;
+	stroke:#fff
 }
-#T1{
-	animation: visible 2s ease .2s infinite;
+#T1
+{
+	animation:visible 2s ease .2s infinite
 }
-#T2{
-	animation: visible 2s ease .4s infinite;
+#T2
+{
+	animation:visible 2s ease .4s infinite
 }
-#T3{
-	animation: visible 2s ease .6s infinite;
+#T3
+{
+	animation:visible 2s ease .6s infinite
 }
-#T4{
-	animation: visible 2s ease .8s infinite;
+#T4
+{
+	animation:visible 2s ease .8s infinite
 }
-#T5{
-	animation: visible 2s ease 1s infinite;
+#T5
+{
+	animation:visible 2s ease 1s infinite
 }
-#T6{
-	animation: visible 2s ease 1.2s infinite;
+#T6
+{
+	animation:visible 2s ease 1.2s infinite
 }
-@keyframes visible {
-	0%{
-		opacity: 1;
-		stroke-opacity: 1;
+@keyframes visible
+{
+	0%, 100%
+	{
+		opacity:1;
+		stroke-opacity:1
 	}
-	50%{
-		opacity: 0;
-		stroke-opacity: 0;
-	}
-	100%{
-		opacity: 1;
-		stroke-opacity: 1;
+	50%
+	{
+		opacity:0;
+		stroke-opacity:0
 	}
 }
 #loaderSvgWrapper div
 {
-	position: relative;
-	font: 25px "Garamond";
-	opacity: 0;
-	animation: blink 1.5s linear infinite;
+	position:relative;
+	font:25px Garamond;
+	opacity:0;
+	animation:blink 1.5s linear infinite
 }
-@keyframes blink
+@keyframes blink 
 {
-	0%, 100%
+	0%,100%
 	{
-		opacity: 0;
+		opacity:0
 	}
-  50%
+	50%
 	{
-		opacity: 1;
+		opacity:1
 	}
 }
 .container
 {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100vw;
-	height: 100vh;
+	position:absolute;
+	top:0;
+	left:0;
+	width:100vw;
+	height:100vh
 }
-
-/* Navigation Bar */
-
 header
 {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	padding: 10px 40px;
-	padding-top: 15px;
-	display: flex;
-	justify-content: space-between;
-	z-index: 5;
-	background-color: rgba(16, 3, 41, 0.8);
-	backdrop-filter: blur(20px);
-	box-shadow: 0 5px 20px 5px rgba(16, 3, 41, 0.479);
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	padding:10px 40px;
+	padding-top:15px;
+	display:flex;
+	justify-content:space-between;
+	z-index:5;
+	background-color:rgba(16,3,41,.8);
+	backdrop-filter:blur(20px);
+	box-shadow:0 5px 20px 5px rgba(16,3,41,.479)
 }
 .logo
 {
-	font: 2rem "Vivaldi";
+	font:2rem Vivaldi
 }
 .logo span
 {
-	color: red;
+	color:red
 }
 .menu
 {
-  	width:40px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	cursor: pointer;
+	width:40px;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	cursor:pointer
 }
 .menu .bar
 {
-	width: 100%;
-	height: 2px;
-	background: #fff;
-	position: relative;
-	transition: all 0.3s;
+	width:100%;
+	height:2px;
+	background:#fff;
+	position:relative;
+	transition:all .3s
 }
 .menu .bar::before
 {
-	content: '';
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	background: #fff;
-	transform: translateY(-10px);
-	transition: all 0.3s;
+	content:'';
+	position:absolute;
+	width:100%;
+	height:100%;
+	background:#fff;
+	transform:translateY(-10px);
+	transition:all .3s
 }
 .menu .bar::after
 {
-	content: '';
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	background: #fff;
-	transform: translateY(10px);
-	transition: all 0.3s;
+	content:'';
+	position:absolute;
+	width:100%;
+	height:100%;
+	background:#fff;
+	transform:translateY(10px);
+	transition:all .3s
 }
 .menu.active .bar
 {
-	transform: rotate(360deg);
-	background-color: transparent;
+	transform:rotate(360deg);
+	background-color:transparent
 }
 .menu.active .bar:before
 {
-	transform: translateY(0) rotate(135deg);
-	transition: all 0.3s;
+	transform:translateY(0) rotate(135deg);
+	transition:all .3s
 }
-.menu.active .bar:after 
+.menu.active .bar:after
 {
-	transform: translateY(0) rotate(45deg);
-	transition: all 0.3s;
-
+	transform:translateY(0) rotate(45deg);
+	transition:all .3s
 }
-
-/* Wrapper - Visible Part of the Webpage */
-
 .wrapper
 {
-	position: relative;
-	min-height: 100vh;
-	width: 100%;
-	height: 100%;
-	background: url(../images/bg.jpg) center/cover;
-	background-repeat: no-repeat;
-	transform-origin: left;
-	transition: all var(--time);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-flow: column;
-	perspective: 1000px;
-	transform-style: preserve-3d;
-	z-index: 1;
+	position:relative;
+	min-height:100vh;
+	width:100%;
+	height:100%;
+	background:url(/images/02baf6d7191057fe435688d2b199367960050d83/bg.jpg) center/cover;
+	background-repeat:no-repeat;
+	transform-origin:left;
+	transition:all var(--time);
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	flex-flow:column;
+	perspective:1000px;
+	transform-style:preserve-3d;
+	z-index:1
 }
 .wrapper.active
 {
-	animation: wrapper-animation 0.5s ease;
-	cursor: pointer;
-	transform: perspective(1300px) rotateY(20deg) translateZ(310px) scale(0.5);
+	animation:wrapper-animation .5s ease;
+	cursor:pointer;
+	transform:perspective(1300px) rotateY(20deg) translateZ(310px) scale(.5)
 }
 @keyframes wrapper-animation
 {
-	from
-	{
-		transform: translate(0);
+	from {
+		transform:translate(0)
 	}
-	to
-	{
-		transform: perspective(1300px) rotateY(20deg) translateZ(310px) scale(0.5);
+	to {
+		transform:perspective(1300px) rotateY(20deg) translateZ(310px) scale(.5)
 	}
 }
 .crop
 {
-	height: 100%;
-	max-height: 100vh;
-	overflow:hidden;
+	height:100%;
+	max-height:100vh;
+	overflow:hidden
 }
-
-/* Wrapper Ends Here */
-
 main
 {
-	margin-top:80px;
+	margin-top:80px
 }
 .heading
 {
-	 font: max(3.5rem, 5vw) "Corbel";
-	 letter-spacing: 1px;
-	 text-transform: uppercase;
-	 text-align: center;
+	font:max(3.5rem,5vw) Corbel;
+	letter-spacing:1px;
+	text-transform:uppercase;
+	text-align:center
 }
-
-/* Slider */
-
 .swiper-container
 {
-	width: 80vw;
-	height: auto;
-	margin-top: 40px;
-	margin-bottom: 100px;
-	background: rgba(255, 255, 255, 0.08);
-	backdrop-filter: blur(20px);
-	box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
-	border-radius: 20px;
-	border: 1px solid rgba(255, 255, 255, 0.3);
-	border-top: 3px solid rgba(255, 255, 255, 0.3);
-	border-left: 4px solid rgba(255, 255, 255, 0.3);
+	width:80vw;
+	height:auto;
+	margin-top:40px;
+	margin-bottom:100px;
+	background:rgba(255,255,255,.08);
+	backdrop-filter:blur(20px);
+	box-shadow:5px 5px 20px rgba(0,0,0,.4);
+	border-radius:20px;
+	border:1px solid rgba(255,255,255,.3);
+	border-top:3px solid rgba(255,255,255,.3);
+	border-left:4px solid rgba(255,255,255,.3)
 }
-.swiper-wrapper
+.swiper-wrapper 
 {
-	width: 80vw;
+	width:80vw
 }
-.swiper-slide 
+.swiper-slide
 {
-	text-align: center;
-	font-size: 18px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: row;
-	padding: 50px;
+	text-align:center;
+	font-size:18px;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	flex-direction:row;
+	padding:50px
 }
-
-/* Slider Content */
-
 .images
 {
-	margin: 30px;
+	margin:30px
 }
 .images img
 {
-	width: max(250px, 20vw);
-	height: auto;
+	width:max(250px,20vw);
+	height:auto
 }
 .description
 {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	margin: 30px;
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+	align-items:center;
+	margin:30px
 }
 .description h2
 {
-	font: max(3.2rem, 5.5vw) "Broadway BT";
-	margin: 30px;
+	font:max(3.2rem,5.5vw) "Broadway BT";
+	margin:30px
 }
 .description p
 {
-	font: 1.5rem "Corbel";
-	text-align: justify;
-	line-height: 1.5;
+	font:1.5rem Corbel;
+	text-align:justify;
+	line-height:1.5
 }
 .description a
 {
-	position: relative;
-	padding: 10px 60px;
-	display: block;
-	font: max(1.4rem, 1.8vw) "Corbel";
-	text-transform: uppercase;
-	text-align: center;
-	border: 1px solid rgba(255, 255, 255, 0.6);
-	border-top: 2px solid rgba(255, 255, 255, 0.6);
-	border-left: 3px solid rgba(255, 255, 255, 0.6);
-	border-radius: 7.5px;
-	background: rgba(255, 255, 255, 0.2);
-	backdrop-filter: blur(5px);
-	box-shadow: 0 3px 10px 5px rgba(0,0,0,0.2);
-	transition: transform 0.2s;
-	margin: 40px;
+	position:relative;
+	padding:10px 60px;
+	display:block;
+	font:max(1.4rem,1.8vw) Corbel;
+	text-transform:uppercase;
+	text-align:center;
+	border:1px solid rgba(255,255,255,.6);
+	border-top:2px solid rgba(255,255,255,.6);
+	border-left:3px solid rgba(255,255,255,.6);
+	border-radius:7.5px;
+	background:rgba(255,255,255,.2);
+	backdrop-filter:blur(5px);
+	box-shadow:0 3px 10px 5px rgba(0,0,0,.2);
+	transition:transform .2s;
+	margin:40px
 }
 .description a:hover
 {
-	transform: translateY(-5px);
+	transform:translateY(-5px)
 }
-
-/* Scroll to Top Button and Animation */
-
 .scrollTop
 {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	position: fixed;
-	width: 50px;
-	height: 50px;
-	border-radius: 50%;
-	background: rgba(255,255,255,0.5);
-	padding-top: 9px;
-	bottom: 20px;
-	right: 40px;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	position:fixed;
+	width:50px;
+	height:50px;
+	border-radius:50%;
+	background:rgba(255,255,255,.5);
+	padding-top:9px;
+	bottom:20px;
+	right:40px
 }
-.arrow
+.arrow 
 {
-	position: relative;
-	width: 22px;
-	height: 22px;
-	border-left: 5px solid black;
-	border-bottom: 5px solid black;
-	transform: rotateZ(135deg);
+	position:relative;
+	width:22px;
+	height:22px;
+	border-left:5px solid #000;
+	border-bottom:5px solid #000;
+	transform:rotateZ(135deg)
 }
-.scrollTop:hover
+.scrollTop:hover 
 {
-	background: rgba(255,255,255, 1);
+	background:#fff
 }
-
-/* Show Footer Button and Animation */
-
-.showFooter
+.showFooter 
 {
-	position: relative;
-	width: 100%;
-	height: auto;
-	display: flex;
-	justify-content: center;
-	padding-bottom: 10px;
-	cursor: pointer;
+	position:relative;
+	width:100%;
+	height:auto;
+	display:flex;
+	justify-content:center;
+	padding-bottom:10px;
+	cursor:pointer
 }
-.chevron {
-	position: absolute;
-	width: 40px;
-	height: 8px;
-	opacity: 0;
-	transform: scale3d(0.5, 0.5, 0.5);
-	animation: move 3s ease-out infinite;
-}
-  
-.chevron:first-child
+.chevron 
 {
-	animation: move 3s ease-out 1s infinite;
+	position:absolute;
+	width:40px;
+	height:8px;
+	opacity:0;
+	transform:scale3d(.5,.5,.5);
+	animation:move 3s ease-out infinite
 }
-  
-.chevron:nth-child(2)
+.chevron:first-child 
 {
-	animation: move 3s ease-out 2s infinite;
+	animation:move 3s ease-out 1s infinite
 }
-  
-.chevron:before,
+.chevron:nth-child(2) 
+{
+	animation:move 3s ease-out 2s infinite
+}
+.chevron:after,
+.chevron:before 
+{
+	content:' ';
+	position:absolute;
+	top:0;
+	height:100%;
+	width:51%;
+	background:#fff
+}
+.chevron:before 
+{
+	left:0;
+	transform:skew(0deg,30deg)
+	}
 .chevron:after 
 {
-	content: ' ';
-	position: absolute;
-	top: 0;
-	height: 100%;
-	width: 51%;
-	background: #fff;
+	right:0;
+	width:50%;
+	transform:skew(0deg,-30deg)
 }
-  
-.chevron:before
+@keyframes move 
 {
-	left: 0;
-	transform: skew(0deg, 30deg);
+	25% {
+	opacity:1
+	}
+	33% {
+	opacity:1;
+	transform:translateY(-20px)
+	}
+	67% {
+	opacity:1;
+	transform:translateY(-10px)
+	}
+	100% {
+	opacity:0;
+	transform:translateY(5px) scale3d(.5,.5,.5)
+	}
 }
-  
-.chevron:after
+footer 
 {
-	right: 0;
-	width: 50%;
-	transform: skew(0deg, -30deg);
-}
-  
-@keyframes move {
-	25% 
-	{
-		opacity: 1;
-	}
-	33%
-	{
-		opacity: 1;
-		transform: translateY(-20px);
-	}
-	67% 
-	{
-		opacity: 1;
-		transform: translateY(-10px);
-	}
-	100%
-	{
-		opacity: 0;
-		transform: translateY(5px) scale3d(0.5, 0.5, 0.5);
-	}
-}
-
-/* Footer */
-
-footer
-{
-	position: relative;
-	background: url(../images/footer.png) center center no-repeat;
-	background-size: cover;
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	padding: 80px;
-	box-shadow: inset 0 20px 20px -10px #000c25;
-	z-index: 1;
+	position:relative;
+	background:url(/images/ab1da5ae8a547f0027f5c82b139e6e292ea833f4/footer.png) center center no-repeat;
+	background-size:cover;
+	width:100%;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	flex-direction:column;
+	padding:80px;
+	box-shadow:inset 0 20px 20px -10px #000c25;
+	z-index:1
 }
 .media
 {
-	display: flex;
-	font: max(1.2rem, 1.6vw) "Corbel";
-	text-transform: uppercase;
+	display:flex;
+	font:max(1.2rem,1.6vw) Corbel;
+	text-transform:uppercase
 }
-.media img
+.media img 
 {
-	width: 60px;
-	height: 60px;
-	padding: 10px;
-	transform: translateY(-15px);
-	cursor: pointer;
+	width:60px;
+	height:60px;
+	padding:10px;
+	transform:translateY(-15px);
+	cursor:pointer
 }
-.media img:hover
+.media img:hover 
 {
-	width: 65px;
-	height: 65px;
+	width:65px;
+	height:65px
 }
-.credit
+.credit 
 {
-	font: max(1.2rem, 1.6vw) "Corbel";
-	text-transform: uppercase;
+	font:max(1.2rem,1.6vw) Corbel;
+	text-transform:uppercase
 }
-.credit span
+.credit span 
 {
-	font: max(1.8rem, 2.3vw) "Vivaldi";
-	text-transform: none;
+	font:max(1.8rem,2.3vw) Vivaldi;
+	text-transform:none
 }
-
-/* Use of particles.js */
-
-#particles-js
+#particles-js 
 {
-	height: 100%;
-	width: auto;
-	z-index: -1;
+	height:100%;
+	width:auto;
+	z-index:-1
 }
-canvas.particles-js-canvas-el
+canvas.particles-js-canvas-el 
 {
-	position: fixed;
-	top: 0;
-	left: 0;
-	z-index: -1;
+	position:fixed;
+	top:0;
+	left:0;
+	z-index:-1
 }
-
-/* Navigation Buttons */
-
-.container nav
+.container nav 
 {
-	position: absolute;
-	right: 40px;
-	width: 200px;
-	height: 100%;
-	display: flex;
-	align-items: center;
+	position:absolute;
+	right:40px;
+	width:200px;
+	height:100%;
+	display:flex;
+	align-items:center
 }
-.container nav ul
+.container nav ul 
 {
-	list-style: none;
+	list-style:none
 }
-.container nav ul li a
+.container nav ul li a 
 {
-	display: block;
-	text-decoration: none;
-	padding: 20px 0;
-	font: 20px "Corbel";
-	text-transform: uppercase;
-	letter-spacing: .1em;
-	opacity: 0;
-	transform: translateY(10px);
-	transition: all var(--time) var(--i);
-	transition: font-size 0.2s;
+	display:block;
+	text-decoration:none;
+	padding:20px 0;
+	font:20px Corbel;
+	text-transform:uppercase;
+	letter-spacing:.1em;
+	opacity:0;
+	transform:translateY(10px);
+	transition:all var(--time) var(--i);
+	transition:font-size .2s
 }
-.container.active nav ul li a
+.container.active nav ul li a 
 {
-	opacity: 1;
-	transform: translateY(0);
+	opacity:1;
+	transform:translateY(0)
 }
-.container nav ul li a:hover
+.container nav ul li a:hover 
 {
-	font-size: 25px;
+	font-size:25px
 }
-.navButtons
+.navButtons 
 {
-	margin-right: 10px;
+	margin-right:10px
 }
-.present
+.present 
 {
-	color: yellow;
+	color:#ff0
 }
-
-/* Media Queries */
-
-@media only screen and (max-width: 1060px)
+@media only screen and (max-width:1060px) 
 {
-	.wrapper.active
+	.wrapper.active 
 	{
-		transform: perspective(1300px) rotateY(20deg) translateZ(310px) translateX(-50px) scale(0.5);
+		transform:perspective(1300px) rotateY(20deg) translateZ(310px) translateX(-50px) scale(.5)
 	}
-	@keyframes wrapper-animation
+	@keyframes wrapper-animation 
 	{
-		from
-		{
-			transform: translate(0);
+		from {
+			transform:translate(0)
 		}
-		to
-		{
-			transform: perspective(1300px) rotateY(20deg) translateZ(310px) translateX(-50px) scale(0.5);
+		to {
+			transform:perspective(1300px) rotateY(20deg) translateZ(310px) translateX(-50px) scale(.5)
 		}
+	}
+	.swiper-slide 
+	{
+		flex-direction:column
+	}
+	.images 
+	{
+		margin-bottom:10px
+	}
+	.images img 
+	{
+		width:max(250px,30vw)
+	}
+	.container nav 
+	{
+		width:180px
+	}
+}
+@media only screen and (max-width:800px) 
+{
+	.wrapper.active 
+	{
+		transform:perspective(1300px) rotateY(50deg) translateZ(0) scale(1)
+	}
+	@keyframes wrapper-animation 
+	{
+		from 
+		{
+			transform:translate(0)
+		}
+		to 
+		{
+			transform:perspective(1300px) rotateY(50deg) translateZ(0) scale(1)
+		}
+	}
+	.description 
+	{
+		margin:10px
+	}
+	.description p 
+	{
+		font-size:1.4rem
+	}
+	.description a 
+	{
+		font-size:1.4;
+		margin-top:50px
+	}
+}
+@media only screen and (max-width:560px) 
+{
+	header 
+	{
+		padding:10px 20px
+	}
+	.logo 
+	{
+		font-size:1.5rem
+	}
+	.menu 
+	{
+		width:25px
+	}
+	.menu .bar 
+	{
+		height:1.5px
+	}
+	.menu .bar::before 
+	{
+		transform:translateY(-7px)
+	}
+	.menu .bar::after 
+	{
+		transform:translateY(7px)
+	}
+	.images img 
+	{
+		width:230px
+	}
+	.description h2 
+	{
+		font-size:3rem
+	}
+	.description p 
+	{
+		font-size:1.3rem
+	}
+	.description a 
+	{
+		padding:10px 40px
+	}
+	.scrollTop 
+	{
+		width:40px;
+		height:40px;
+		right:17.5px
+	}
+	.arrow 
+	{
+		width:18px;
+		height:18px
+	}
+	.container nav 
+	{
+		width:150px
+	}
+}
+@media only screen and (max-device-width:450px) 
+{
+	header 
+	{
+		padding:10px 15px
+	}
+	.logo 
+	{
+		font-size:1.4rem
+	}
+	.wrapper.active 
+	{
+		transform:perspective(1300px) rotateY(65deg) translateZ(0) scale(1)
+	}
+	@keyframes wrapper-animation 
+	{
+		from 
+		{
+			transform:translate(0)
+		}
+		to 
+		{
+			transform:perspective(1300px) rotateY(65deg) translateZ(0) scale(1)
+		}
+	}
+	.heading 
+	{
+		font-size:2.5rem
 	}
 	.swiper-slide
 	{
-		flex-direction: column;
+		padding: 30px;
 	}
-	.images
+	.images 
 	{
-		margin-bottom: 10px;
+		margin:0
 	}
-	.images img
+	.images img 
 	{
-		width: max(250px, 30vw);
+		width:45vw
 	}
-	.container nav
-	{
-		width: 180px;
-	}
-}
-
-@media only screen and (max-width: 800px)
-{
-	.wrapper.active
-	{
-		transform: perspective(1300px) rotateY(50deg) translateZ(0) scale(1);
-	}
-	@keyframes wrapper-animation
-	{
-		from
-		{
-			transform: translate(0);
-		}
-		to
-		{
-		  transform: perspective(1300px) rotateY(50deg) translateZ(0) scale(1);
-		}
-	}
-	.description
-	{
-		margin: 10px;
-	}
-  	.description p
-	{
-		font-size: 1.4rem;
-	}
-	.description a
-	{
-		font-size: 1.4;
-		margin-top: 50px;
-	}
-}
-
-@media only screen and (max-width: 560px)
-{
-	header
-	{
-		padding: 10px 20px;
-	}
-	.logo
-	{
-		font-size: 1.5rem;
-	}
-	.menu
-	{
-		width: 25px;
-	}
-	.menu .bar
-	{
-		height: 1.5px;
-	}
-	.menu .bar::before
-	{
-		transform: translateY(-7px);
-	}
-	.menu .bar::after
-	{
-		transform: translateY(7px);
-	}
-		.images img
-	{
-		width: 230px;
-	}
-		.description h2
-	{
-		font-size: 3rem;
-	}
-	.description p
-	{
-		font-size: 1.3rem;
-	}
-	.description a
-	{
-		padding: 10px 40px;
-	}
-	.scrollTop
-	{
-		width: 40px;
-		height: 40px;
-		right: 17.5px;
-	}
-	.arrow
-	{
-		width: 18px;
-		height: 18px;
-	}
-	.container nav
-	{
-		width: 150px;
-	}
-}
-
-@media only screen and (max-device-width: 450px)
-{
-	header
-	{
-		padding: 10px 15px;
-	}
-	.logo
-	{
-		font-size: 1.4rem;
-	}
-	.wrapper.active
-	{
-		transform: perspective(1300px) rotateY(65deg) translateZ(0) scale(1);
-	}
-	@keyframes wrapper-animation
-	{
-		from
-		{
-			transform: translate(0);
-		}
-		to
-		{
-		  transform: perspective(1300px) rotateY(65deg) translateZ(0) scale(1);
-		}
-	}
-	.heading
-	{
-		font-size: 2.5rem;
-	}
-	.images
+	.description 
 	{
 		margin: 0;
+		margin-bottom:0
 	}
-	.images img
+	.description h2 
 	{
-		width: 45vw;
+		font-size:2rem
 	}
-	.description
+	.description p 
 	{
-		margin-bottom: 0;
+		font-size:1rem
 	}
-	.description h2
+	.description a 
 	{
-		font-size: 2rem;
+		font-size:1rem;
+		padding:7px 15px
 	}
-	.description p
+	.scrollTop 
 	{
-		font-size: 1rem;
+		right:18px;
+		width:33px;
+		height:33px;
+		padding-top:5px;
+		background:#fff
 	}
-	.description a
+	.arrow 
 	{
-		font-size: 1rem;
-		padding: 7px 15px;
+		width:15px;
+		height:15px
 	}
-	.scrollTop
+	footer 
 	{
-		right: 18px;
-		width: 33px;
-		height: 33px;
-		padding-top: 5px;
-		background: white;
+		padding:40px
 	}
-	.arrow
+	.media 
 	{
-		width: 15px;
-		height: 15px;
+		font-size:.9rem
 	}
-	footer
+	.media img 
 	{
-		padding: 40px;
+		width:52px;
+		height:52px
 	}
-	.media
+	.media img:hover 
 	{
-		font-size: 0.9rem;
+		width:55px;
+		height:55px
 	}
-	.media img
+	.credit 
 	{
-		width: 52px;
-		height: 52px;
+		font-size:.9rem
 	}
-	.media img:hover
+	.credit span 
 	{
-		width: 55px;
-		height: 55px;
-	}
-	.credit
-	{
-		font-size: 0.9rem;
-	}
-	.credit span
-	{
-		font-size: 1.3rem;
+		font-size:1.3rem
 	}
 }
