@@ -37,13 +37,13 @@ var cross = document.querySelector('.cross');
 
 var i;
 
-for(i = 0; i < image.length; i++) {
+for(i = 0; i < image.length; i++) ((i)=> {
 	image[i].onclick = () => {
 		modal.style.display = 'flex';
 		mImage[i].style.display ="block";
+		cross.onclick = () => {
+			modal.style.display = 'none';
+			mImage[i].style.display ="none";
+		}
 	}
-	cross.onclick = () => {
-		modal.style.display = 'none';
-		mImage[i].style.display ="none";
-	}
-}
+})(i);
