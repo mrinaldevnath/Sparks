@@ -421,6 +421,7 @@ footer
 	height: 100%;
 	width: auto;
 	z-index: -1;
+	overflow: hidden;
 }
 canvas.particles-js-canvas-el
 {

@@ -101,14 +101,6 @@ path{
 		opacity: 1;
 	}
 }
-.container
-{
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100vw;
-	height: 100vh;
-}
 
 /* Navigation Bar */
 
@@ -475,6 +467,7 @@ footer
 	height: 100%;
 	width: auto;
 	z-index: -1;
+	overflow: hidden;
 }
 canvas.particles-js-canvas-el
 {
@@ -486,6 +479,14 @@ canvas.particles-js-canvas-el
 
 /* Navigation Buttons */
 
+.container
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+}
 .container nav
 {
 	position: absolute;
