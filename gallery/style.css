@@ -673,6 +673,12 @@ canvas.particles-js-canvas-el
 		padding-left: 5px;
 		padding-right: 5px;
 	}
+	.cross
+	{
+		width: 25px;
+		top: 10px;
+		right: 15px;
+	}
 	.scrollTop 
 	{
 		right:18px;
