@@ -569,6 +569,10 @@ canvas.particles-js-canvas-el
 			transform:perspective(1300px) rotateY(20deg) translateZ(310px) translateX(-50px) scale(.5)
 		}
 	}
+	.modal-image
+	{
+		width: 100%;
+	}
 	.container nav 
 	{
 		width:180px
